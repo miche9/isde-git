@@ -35,12 +35,6 @@ class NMC(object):
         return self._class_labels
 
     def fit(self, xtr, ytr):
-        pass
-
-    def predict(self, xts):
-        pass
-
-    def fit_function(self, xtr, ytr):
         if not isinstance(xtr, np.ndarray):
             raise TypeError("inputs should be ndarrays")
 
@@ -53,3 +47,6 @@ class NMC(object):
         for k in range(0, n_classes):
             self._centroids[k, :] = np.mean(xtr[ytr == k, :], axis=0)
         return self
+
+    def predict(self, xts):
+        pass
